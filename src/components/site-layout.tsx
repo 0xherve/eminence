@@ -16,7 +16,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen w-full bg-page-bg">
-      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col border-x border-page-border bg-page-bg text-page-fg">
+      <div className="mx-auto flex min-h-screen w-full max-w-[90vw] flex-col border-x border-page-border bg-page-bg text-page-fg">
       <header className="sticky top-0 z-50 border-b border-page-border bg-page-bg/95 backdrop-blur-md">
         <nav className="flex items-center justify-between border-x border-page-border px-6 py-4">
           <Link
