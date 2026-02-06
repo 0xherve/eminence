@@ -2,7 +2,7 @@ import { SiteLayout } from "~/components/site-layout";
 import { site } from "~/content/site";
 import "./app.css";
 
-export default function App() {
+export default function About() {
   return (
     <SiteLayout>
       <div class="border-x border-page-border">
