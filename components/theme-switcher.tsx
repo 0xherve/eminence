@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, ElementType } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   type Theme,
   getTheme,
@@ -10,7 +10,7 @@ import {
 import { IconMoon, IconSun, IconDeviceDesktop } from "@tabler/icons-react"
 import { cn } from "@/lib/utils";
 
-const OPTIONS: { value: Theme; label: string; icon: ElementType; ariaLabel: string }[] = [
+const OPTIONS: { value: Theme; label: string; icon: ReactNode; ariaLabel: string }[] = [
   { value: "system", label: "System", icon: <IconDeviceDesktop className="size-4" />, ariaLabel: "System theme" },
   { value: "light", label: "Light", icon: <IconSun className="size-4" />, ariaLabel: "Light theme" },
   { value: "dark", label: "Dark", icon: <IconMoon className="size-4" />, ariaLabel: "Dark theme" },
