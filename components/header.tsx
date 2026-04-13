@@ -18,39 +18,39 @@ export function Header({ aboutRef, projectsRef, className }: HeaderProps) {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm",
+        "sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md transition-all duration-300",
         className
       )}
     >
-      <nav className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4 sm:px-6">
+      <nav className="mx-auto flex h-14 max-w-[780px] items-center justify-between px-7 sm:px-8">
         <Link
           href="/"
-          className="text-sm font-medium text-foreground transition-colors hover:text-foreground/80"
+          className="text-sm font-semibold text-foreground transition-colors hover:text-foreground/70"
         >
-          {siteConfig.name}
+          <span className="font-mono text-xs tracking-wide text-muted-foreground">→</span> {siteConfig.name.split(" ")[0]}
         </Link>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-8">
           <button
             type="button"
             onClick={() => scrollTo(aboutRef)}
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="text-xs font-mono text-muted-foreground transition-colors hover:text-foreground uppercase tracking-widest"
           >
-            About
+            about
           </button>
           <button
             type="button"
             onClick={() => scrollTo(projectsRef)}
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="text-xs font-mono text-muted-foreground transition-colors hover:text-foreground uppercase tracking-widest"
           >
-            Projects
+            projects
           </button>
           <Link
             href={siteConfig.writing.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="text-xs font-mono text-muted-foreground transition-colors hover:text-foreground uppercase tracking-widest"
           >
-            {siteConfig.writing.label}
+            writing
           </Link>
         </div>
       </nav>

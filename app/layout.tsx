@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, DM_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, DM_Mono } from "next/font/google";
 import { themeScript } from "@/lib/theme-script";
 import "./globals.css";
 
-const dmSans = DM_Sans({subsets:['latin'],variable:'--font-sans'});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmMono = DM_Mono({
   subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={dmSans.variable} suppressHydrationWarning>
+    <html lang="en" className={`${plusJakartaSans.variable} ${dmMono.variable}`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{ __html: themeScript }}
@@ -34,7 +34,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className="antialiased bg-background text-foreground transition-colors duration-300"
       >
         {children}
       </body>
