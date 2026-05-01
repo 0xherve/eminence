@@ -1,54 +1,29 @@
-"use client";
-
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
-type HeaderProps = {
-  aboutRef: React.RefObject<HTMLElement | null>;
-  projectsRef: React.RefObject<HTMLElement | null>;
-  className?: string;
-};
-
-export function Header({ aboutRef, projectsRef, className }: HeaderProps) {
-  const scrollTo = (ref: React.RefObject<HTMLElement | null>) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
+export function Header({ className }: { className?: string }) {
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md transition-all duration-300",
-        className
-      )}
-    >
-      <nav className="mx-auto flex h-14 max-w-[780px] items-center justify-between px-7 sm:px-8">
+    <header className={cn("w-full", className)}>
+      <nav className="mx-auto flex max-w-[1080px] items-center justify-between gap-6 px-6 py-6 sm:px-8 sm:py-8">
         <Link
           href="/"
-          className="text-sm font-semibold text-foreground transition-colors hover:text-foreground/70"
+          className="text-sm font-medium tracking-tight text-foreground transition-opacity hover:opacity-70"
         >
-          <span className="font-mono text-xs tracking-wide text-muted-foreground">→</span> {siteConfig.name.split(" ")[0]}
+          {siteConfig.name}
         </Link>
-        <div className="flex items-center gap-8">
-          <button
-            type="button"
-            onClick={() => scrollTo(aboutRef)}
-            className="text-xs font-mono text-muted-foreground transition-colors hover:text-foreground uppercase tracking-widest"
-          >
+        <div className="flex items-center gap-5 text-sm text-muted-foreground sm:gap-8">
+          <a href="#about" className="transition-colors hover:text-foreground">
             about
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollTo(projectsRef)}
-            className="text-xs font-mono text-muted-foreground transition-colors hover:text-foreground uppercase tracking-widest"
-          >
+          </a>
+          <a href="#projects" className="transition-colors hover:text-foreground">
             projects
-          </button>
+          </a>
           <Link
             href={siteConfig.writing.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-mono text-muted-foreground transition-colors hover:text-foreground uppercase tracking-widest"
+            className="transition-colors hover:text-foreground"
           >
             writing
           </Link>

@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, DM_Mono } from "next/font/google";
-import { themeScript } from "@/lib/theme-script";
+import { Space_Grotesk, Work_Sans } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-heading",
+  weight: ["700"],
 });
 
-const dmMono = DM_Mono({
+const workSans = Work_Sans({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-body",
   weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Eminence — Personal Site",
+  title: "Eminence",
   description: "Personal site and portfolio",
 };
 
@@ -26,18 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${dmMono.variable}`} suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{ __html: themeScript }}
-          suppressHydrationWarning
-        />
-      </head>
-      <body
-        className="antialiased bg-background text-foreground transition-colors duration-300"
-      >
-        {children}
-      </body>
+    <html lang="en" className={`${spaceGrotesk.variable} ${workSans.variable}`}>
+      <body className="bg-background text-foreground antialiased">{children}</body>
     </html>
   );
 }
