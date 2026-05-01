@@ -16,7 +16,10 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   title: "Herve Rwigema",
-  description: "Personal site and portfolio",
+  description: "Curious tinkerer",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
