@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
-import { cn } from "@/lib/utils";
 
 const socialLinks = [
   { label: "X", href: siteConfig.social.twitter },
@@ -8,11 +7,11 @@ const socialLinks = [
   { label: "Substack", href: siteConfig.social.substack },
 ] as const;
 
-export function Footer({ className }: { className?: string }) {
+export function Footer() {
   return (
-    <footer className={cn("w-full border-t border-border/60 py-10 sm:py-12", className)}>
-      <div className="mx-auto flex max-w-[1080px] flex-col gap-8 px-6 sm:px-8">
-        <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
+    <footer className="w-full py-10 sm:py-12">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 sm:px-8">
+        <div className="flex flex-wrap justify-center items-center gap-5 text-sm text-muted-foreground">
           {socialLinks.map(({ label, href }) => (
             <Link
               key={label}
@@ -24,9 +23,6 @@ export function Footer({ className }: { className?: string }) {
               {label}
             </Link>
           ))}
-        </div>
-        <div className="border-t border-border/40 pt-6">
-          <p className="text-sm text-muted-foreground">{siteConfig.footer.copyright}</p>
         </div>
       </div>
     </footer>

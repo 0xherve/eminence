@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Herve Rwigema",
+  name: "0xherve",
   tagline: "Aspiring Polymath",
   email: "imenarwigema@gmail.com",
   substackUrl: "https://0xherve.substack.com/",

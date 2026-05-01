@@ -11,11 +11,11 @@ const spaceGrotesk = Space_Grotesk({
 const workSans = Work_Sans({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["300", "400", "500"],
+  weight: ["300", "400"],
 });
 
 export const metadata: Metadata = {
-  title: "Eminence",
+  title: "Herve Rwigema",
   description: "Personal site and portfolio",
 };
 
