@@ -8,22 +8,11 @@ export function HomePage() {
       <Header />
 
       <main className="flex-1 mx-auto max-w-4xl w-full py-20">
-        <section className="mb-12">
-          <h1 className="text-5xl font-bold tracking-tight mb-4">
-            Herve Rwigema
-          </h1>
-          <div className="flex gap-4 mt-4">
-          {siteConfig.tags.map((tag) => (
-            <span key={tag} className="text-sm text-muted-foreground uppercase tracking-widest">
-              -{tag}
-            </span>
-          ))}
-          </div>
-        </section>
+        <h1 className="text-5xl font-bold tracking-tight mb-4">Hey There!</h1>
 
         <section className="space-y-4 text-foreground/70 leading-relaxed">
           <p>
-            Hi, am a software engineer based in Rwanda.
+            I am Herve. I am Rwandan a software engineer.
           </p>
           <p>
             I like to refer to myself as a “modern software engineer”. I build most of the code I write with AI, and play with multiple tools to leave about how they work.

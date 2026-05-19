@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const links = [
-  { label: "projects", href: "http://polimath.dev/" },
+  { label: "projects", href: "/projects" },
   { label: "writing", href: "https://0xherve.substack.com/" },
 ];
 
